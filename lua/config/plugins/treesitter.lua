@@ -1,4 +1,5 @@
 return {
+  -- Configure treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -20,5 +21,11 @@ return {
 	},
       }
     end,
-  }
+  },
+
+  -- Auto close html tags with treesitter
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {},
+  },
 }

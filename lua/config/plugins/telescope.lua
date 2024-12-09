@@ -21,11 +21,12 @@ return {
     vim.keymap.set("n", "<space>fh", require("telescope.builtin").help_tags)
     -- Find inside current directory
     vim.keymap.set("n", "<space>fd", require("telescope.builtin").find_files)
-    -- Search config directory from anywhere
+    -- Search config directory from anywhere::edit neovim
     vim.keymap.set("n", "<space>en", function()
-      require("telescope.builtin").find_files()
+      require("telescope.builtin").find_files {
       cwd = vim.fn.stdpath("config")
-    end)
-  end
+    }
+  end)
+end
 }
 }

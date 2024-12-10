@@ -27,9 +27,9 @@ vim.opt.mouse = ""
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
-vim.opt.backspace = {"start", "eol", "indent"}
-vim.opt.path:append({"**"})
-vim.opt.wildignore:append({"*/node_modules/*"})
+vim.opt.backspace = { "start", "eol", "indent" }
+vim.opt.path:append({ "**" })
+vim.opt.wildignore:append({ "*/node_modules/*" })
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -51,22 +51,21 @@ vim.keymap.set("n", "sl", "<C-w>l", { desc = "Move to right window" })
 -- vim.keymap.set("n", "<C-w><left>", "<C-w><", { desc = "Resize window to left" })
 vim.keymap.set("n", "<leader>x", ":.lua<CR>", { desc = "Source a single line" })
 vim.keymap.set("v", "<leader>x", ":lua<CR>", { desc = "Source selection" })
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>",{ desc = "Source entire file" })
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source entire file" })
 vim.keymap.set("n", "<left>", "<cmd>echo 'Use h to move!'<CR>", { desc = "Use h to move!" })
 vim.keymap.set("n", "<right>", "<cmd>echo 'Use l to move!'<CR>", { desc = "Use l to move!" })
 vim.keymap.set("n", "<up>", "<cmd>echo 'Use k to move!'<CR>", { desc = "Use k to move!" })
 vim.keymap.set("n", "<down>", "<cmd>echo 'Use j to move!'<CR>", { desc = "Use j to move!" })
 vim.keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
+	vim.diagnostic.goto_next()
 end, { desc = "Move to next diagnostic" })
-
 
 --Autocommands
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-  vim.highlight.on_yank()
-end,
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

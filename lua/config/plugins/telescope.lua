@@ -8,25 +8,25 @@ return {
   config = function()
     require("telescope").setup {
       pickers = {
-	find_files = {
-	  theme = "ivy"
-	}
+        find_files = {
+          theme = "ivy"
+        }
       },
       extensions = {
-	fzf = {}
+        fzf = {}
       }
     }
 
-    -- Open telescope help tags
-    vim.keymap.set("n", "<space>fh", require("telescope.builtin").help_tags)
-    -- Find inside current directory
-    vim.keymap.set("n", "<space>fd", require("telescope.builtin").find_files)
-    -- Search config directory from anywhere::edit neovim
-    vim.keymap.set("n", "<space>en", function()
+    -- Open telescope help tags (fh:find help)
+    vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags)
+    -- Find inside current directory (fd:find dir)
+    vim.keymap.set("n", "<leader>fd", require("telescope.builtin").find_files)
+    -- Find config directory from anywhere (en:edit neovim)
+    vim.keymap.set("n", "<leader>en", function()
       require("telescope.builtin").find_files {
-      cwd = vim.fn.stdpath("config")
-    }
-  end)
-end
+        cwd = vim.fn.stdpath("config")
+      }
+    end)
+  end
 }
 }

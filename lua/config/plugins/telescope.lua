@@ -1,4 +1,6 @@
 return {
+
+  -- telescope
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
@@ -28,5 +30,19 @@ return {
       }
     end)
   end
-}
+},
+
+-- telescope-ui
+{
+  "nvim-telescope/telescope-ui-select.nvim",
+  config = function()
+    require("telescope").setup({
+      extensions = {
+        require("telescope.themes").get_dropdown {
+        }
+      }
+    })
+    require("telescope").load_extension("ui-select")
+  end,
+},
 }

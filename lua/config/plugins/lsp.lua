@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 return {
 
   -- mason
@@ -14,8 +15,8 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls"
-        }
+          "cssls", "css_variables", "tailwindcss", "emmet_language_server", "html", "lua_ls", "pyright", "ts_ls"
+        },
       })
     end,
   },
@@ -36,7 +37,20 @@ return {
     },
     config = function()
       local lspconfig = require("lspconfig")
+
+      lspconfig.cssls.setup({})
+      lspconfig.css_variables.setup({})
+      lspconfig.tailwindcss.setup({})
       lspconfig.lua_ls.setup({})
+      lspconfig.emmet_language_server.setup({
+        filetypes = { "css", "eruby", "html", "htmldjango", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescript", "typescriptreact" },
+      })
+      lspconfig.html.setup({})
+      lspconfig.pyright.setup({})
+      lspconfig.ts_ls.setup({})
+
+      -- code action
+      vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
 

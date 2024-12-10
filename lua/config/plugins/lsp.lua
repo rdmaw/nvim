@@ -1,6 +1,26 @@
 return {
 
-  -- nvim-lspconfig
+  -- mason
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+
+  -- mason lspconfig
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls"
+        }
+      })
+    end,
+  },
+
+  -- lspconfig
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -15,6 +35,8 @@ return {
       },
     },
     config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup({})
     end,
   },
 

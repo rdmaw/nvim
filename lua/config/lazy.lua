@@ -14,7 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
--- Change runtimepath for neovim to lazy
 vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
@@ -29,7 +28,6 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     -- { "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight-storm" end },
-    -- Import plugins from plugins directory
     { import = "config.plugins" },
   },
   -- automatically check for plugin updates

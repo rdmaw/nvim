@@ -13,10 +13,12 @@ vim.opt.splitright = true
 -- Keymaps
 vim.g.mapleader = " "
 
+-- Keymaps: Sourcing
 vim.keymap.set("n", "<leader>x", ":.lua<CR>") -- source a single line
 vim.keymap.set("v", "<leader>x", ":lua<CR>") -- source selection
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>") -- source entire file
 
+--Autocommands
 -- Highlight yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",

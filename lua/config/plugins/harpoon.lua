@@ -38,5 +38,11 @@ return {
 		vim.keymap.set("n", "<leader>8", function()
 			harpoon:list():select(8)
 		end, { desc = "Go to Harpoon 8" })
+		vim.keymap.set("n", "<leader>9", function()
+			harpoon:list():select(9)
+		end, { desc = "Go to Harpoon 9" })
+		vim.keymap.set("n", "<leader>0", function()
+			harpoon:list():select(10)
+		end, { desc = "Go to Harpoon 10" })
 	end,
 }

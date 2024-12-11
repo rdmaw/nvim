@@ -1,6 +1,6 @@
 return {
 
-	-- telescope
+	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
@@ -21,16 +21,26 @@ return {
 			vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags)
 			-- Find inside current directory (fd:find dir)
 			vim.keymap.set("n", "<leader>fd", require("telescope.builtin").find_files)
-			-- Find config directory from anywhere (en:edit neovim)
-			vim.keymap.set("n", "<leader>en", function()
+			-- Find config directory from anywhere (en:find nvim)
+			vim.keymap.set("n", "<leader>fn", function()
 				require("telescope.builtin").find_files({
 					cwd = vim.fn.stdpath("config"),
 				})
 			end)
+
+			--  Find installed files
+			vim.keymap.set("n", "<space>fi", function()
+				require("telescope.builtin").find_files({
+					cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+				})
+			end)
+
+			-- Require multigrep file to search matching words for multiple languages
+			require("config.telescope.multigrep").setup()
 		end,
 	},
 
-	-- telescope-ui
+	-- Telescope-ui
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 		config = function()

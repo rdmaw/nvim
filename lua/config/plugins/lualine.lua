@@ -25,7 +25,7 @@ return {
 						{ "branch", "diff", "diagnostics" },
 					},
 					lualine_c = {
-						{ "filename", path = 1, color = { bg = nil } },
+						{ "filename", path = 1 },
 					},
 					lualine_x = {
 						{

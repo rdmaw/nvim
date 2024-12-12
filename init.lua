@@ -3,6 +3,7 @@ require("config.lazy")
 -- Options
 vim.scriptencoding = "utf-8"
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-i-c:block-nCursor"
 vim.opt.title = true
 vim.opt.wrap = false
 vim.opt.number = true

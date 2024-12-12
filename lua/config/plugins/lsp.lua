@@ -1,6 +1,6 @@
 return {
 
-	-- mason
+	-- Mason
 	{
 		"williamboman/mason.nvim",
 		config = function()
@@ -8,7 +8,7 @@ return {
 		end,
 	},
 
-	-- mason lspconfig
+	-- Mason LSPConfig
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
@@ -22,12 +22,13 @@ return {
 					"lua_ls",
 					"pyright",
 					"ts_ls",
+					"jsonls",
 				},
 			})
 		end,
 	},
 
-	-- lspconfig
+	-- LSPConfig
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -68,6 +69,7 @@ return {
 			lspconfig.html.setup({})
 			lspconfig.pyright.setup({})
 			lspconfig.ts_ls.setup({})
+			lspconfig.jsonls.setup({})
 
 			-- code action
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})

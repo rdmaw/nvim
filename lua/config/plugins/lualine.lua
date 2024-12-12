@@ -3,11 +3,15 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
+			local auto_theme_custom = require("lualine.themes.auto")
+			auto_theme_custom.normal.c.bg = "none"
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = "auto",
+					theme = auto_theme_custom,
 					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
 				},
 				sections = {
 					lualine_a = {
@@ -17,7 +21,7 @@ return {
 						{ "branch", "diff", "diagnostics" },
 					},
 					lualine_c = {
-						{ "filename", path = 1 },
+						{ "filename", path = 1, color = { bg = nil } },
 					},
 					lualine_x = {
 						{

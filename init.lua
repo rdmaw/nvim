@@ -1,38 +1,39 @@
 require("config.lazy")
-local opt = vim.opt
+local set = vim.opt
 local map = vim.keymap.set
 
 -- Options
 vim.scriptencoding = "utf-8"
-opt.termguicolors = true
-opt.guicursor = "n-v-i-c:block-nCursor"
-opt.title = true
-opt.wrap = false
-opt.number = true
-opt.relativenumber = true
-opt.autoindent = true
-opt.smartindent = true
-opt.breakindent = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.smarttab = true
-opt.clipboard = "unnamedplus"
-opt.expandtab = true
-opt.incsearch = true
-opt.hlsearch = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.inccommand = "split"
-opt.splitbelow = true
-opt.splitright = true
-opt.splitkeep = "cursor"
-opt.mouse = ""
-opt.signcolumn = "yes"
-opt.scrolloff = 8
-opt.swapfile = false
-opt.backspace = { "start", "eol", "indent" }
-opt.path:append({ "**" })
-opt.wildignore:append({ "*/node_modules/*" })
+set.termguicolors = true
+set.guicursor = "n-v-i-c:block-nCursor"
+set.title = true
+set.wrap = false
+set.number = true
+set.relativenumber = true
+set.autoindent = true
+set.smartindent = true
+set.breakindent = true
+set.shiftwidth = 2
+set.tabstop = 2
+set.smarttab = true
+set.clipboard = "unnamedplus"
+set.expandtab = true
+set.incsearch = true
+set.hlsearch = true
+set.ignorecase = true
+set.smartcase = true
+set.inccommand = "split"
+set.splitbelow = true
+set.splitright = true
+set.splitkeep = "cursor"
+set.mouse = ""
+set.signcolumn = "yes"
+set.scrolloff = 8
+set.sidescrolloff = 30
+set.swapfile = false
+set.backspace = { "start", "eol", "indent" }
+set.path:append({ "**" })
+set.wildignore:append({ "*/node_modules/*" })
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -62,7 +63,7 @@ map("n", "<right>", "<cmd>echo 'Use l to move!'<CR>", { desc = "Use l to move!" 
 map("n", "<up>", "<cmd>echo 'Use k to move!'<CR>", { desc = "Use k to move!" })
 map("n", "<down>", "<cmd>echo 'Use j to move!'<CR>", { desc = "Use j to move!" })
 
---Autocommands
+-- Autocommands
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking text",

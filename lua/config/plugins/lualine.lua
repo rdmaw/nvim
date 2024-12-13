@@ -30,6 +30,7 @@ return {
 					lualine_x = {
 						{
 							"harpoon2",
+							icon = " ",
 							indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" },
 							active_indicators = {
 								"[1]",

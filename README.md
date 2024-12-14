@@ -1,4 +1,4 @@
 # Neovim Config
 My current neovim setup.
 
-It probably won't work for your computer, but you can take inspiration from it :)
+It probably won't work on your pc, but you can take inspiration from it :)

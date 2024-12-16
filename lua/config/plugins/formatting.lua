@@ -1,29 +1,29 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		require("conform").setup({
-			formatters_by_ft = {
-				lua = { "stylua" },
-				python = { "isort", "black" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
-				javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-				html = { "prettierd", "prettier", stop_after_first = true },
-				css = { "prettierd", "prettier", stop_after_first = true },
-				json = { "prettierd", "prettier", stop_after_first = true },
-				yaml = { "prettierd", "prettier", stop_after_first = true },
-				markdown = { "prettierd", "prettier", stop_after_first = true },
-			},
-		})
+  "stevearc/conform.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    require("conform").setup({
+      formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        javascript = { "prettierd" },
+        typescript = { "prettierd" },
+        javascriptreact = { "prettierd" },
+        typescriptreact = { "prettierd" },
+        html = { "prettierd" },
+        css = { "prettierd" },
+        json = { "prettierd" },
+        yaml = { "prettierd" },
+        markdown = { "prettierd" },
+      },
 
-		-- Format on save
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf })
-			end,
-		})
-	end,
+      default_format_opts = {
+        lsp_format = "fallback",
+      },
+      format_on_save = {
+        lsp_format = "fallback",
+        timeout_ms = 500,
+      },
+    })
+  end,
 }

@@ -25,7 +25,7 @@ return {
             { "branch", "diff", "diagnostics" },
           },
           lualine_c = {
-            { "filename", path = 1 },
+            { "filename" },
           },
           lualine_x = {
             {
@@ -44,7 +44,7 @@ return {
                 "[9]",
                 "[10]",
               },
-              color_active = { fg = "#ea9a97" },
+              color_active = { fg = "#87afaf" },
             },
             { "filetype" },
           },
@@ -52,7 +52,9 @@ return {
             { "progress" },
           },
           lualine_z = {
-            { "location" },
+            {
+              "location",
+            },
           },
         },
       })

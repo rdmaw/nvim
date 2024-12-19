@@ -43,8 +43,8 @@ map("i", "jj", "<ESC>", { desc = "ESC with jj" })
 map("n", "+", "<C-a>", { desc = "Increment number" })
 map("n", "-", "<C-x>", { desc = "Decrement number" })
 map("n", "<C-e>", "gg<S-v>G", { noremap = true, desc = "Select all" })
-map("n", "<M-s>", ":vsplit<CR>", { desc = "Split window to the right" })
-map("n", "<M-v>", ":split<CR>", { desc = "Split window below" })
+map("n", "<M-\\>", ":vsplit<CR>", { desc = "Split window to the right" })
+map("n", "<M-->", ":split<CR>", { desc = "Split window below" })
 map("n", "<M-,>", "<c-w>4<", { desc = "Resize window to the left" })
 map("n", "<M-.>", "<c-w>4>", { desc = "Resize window to the right" })
 map("n", "<M-'>", "<C-W>+", { desc = "Resize window taller" })
@@ -62,11 +62,11 @@ map("n", "<down>", "<cmd>echo 'Use j to move!'<CR>", { desc = "Use j to move!" }
 -- Autocommands
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 vim.g.loaded_node_provider = 0

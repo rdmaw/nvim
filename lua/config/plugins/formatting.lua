@@ -3,9 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("conform").setup({
-			formatters = {
-				prettierd = { args = { "--tab-width", "2", "--use-tabs", "false" } },
-			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },

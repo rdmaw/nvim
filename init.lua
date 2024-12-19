@@ -15,6 +15,7 @@ set.smartindent = true
 set.breakindent = true
 set.shiftwidth = 2
 set.tabstop = 2
+set.expandtab = true
 set.smarttab = true
 set.clipboard = "unnamedplus"
 set.expandtab = true

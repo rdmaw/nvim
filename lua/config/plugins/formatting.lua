@@ -15,7 +15,6 @@ return {
 				json = { "prettierd" },
 				yaml = { "prettierd" },
 				markdown = { "markdownlint", "prettierd" },
-				sql = { "sqlfluff", "sql-formatter" },
 			},
 
 			vim.api.nvim_create_autocmd("BufWritePre", {

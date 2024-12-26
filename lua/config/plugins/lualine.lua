@@ -72,14 +72,6 @@ return {
       end
 
       -- ins_left({
-      -- 	function()
-      -- 		return "▊"
-      -- 	end,
-      -- 	color = { fg = colors.blue }, -- Sets highlighting of component
-      -- 	padding = { left = 0, right = 1 }, -- We don't need space before this
-      -- })
-      --
-      -- ins_left({
       -- 	-- mode component
       -- 	function()
       -- 		return ""
@@ -122,7 +114,8 @@ return {
       ins_left({
         "filename",
         cond = conditions.buffer_not_empty,
-        color = { fg = colors.cyan, gui = "bold" },
+        -- , gui = "bold"
+        color = { fg = colors.white },
       })
 
       ins_left({
@@ -136,19 +129,7 @@ return {
         },
       })
 
-      ins_left({
-        "diff",
-        symbols = { added = " ", modified = "󰏬 ", removed = " " },
-        diff_color = {
-          added = { fg = colors.green },
-          modified = { fg = colors.orange },
-          removed = { fg = colors.red },
-        },
-        cond = conditions.hide_in_width,
-      })
-
-      -- Insert mid section. You can make any number of sections in neovim :)
-      -- for lualine it's any number greater then 2
+      -- Declare midsection
       ins_left({
         function()
           return "%="
@@ -160,8 +141,20 @@ return {
       ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
       ins_right({
+        "diff",
+        symbols = { added = " ", modified = " ", removed = " " },
+        diff_color = {
+          added = { fg = colors.green },
+          modified = { fg = colors.orange },
+          removed = { fg = colors.red },
+        },
+        cond = conditions.hide_in_width,
+      })
+
+      ins_right({
         "harpoon2",
-        icon = " ",
+        -- 
+        icon = "",
         indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" },
         active_indicators = {
           "[1]",
@@ -196,7 +189,8 @@ return {
           end
           return msg
         end,
-        icon = " ",
+
+        icon = "󰒓",
         -- color = { fg = "#ffffff", gui = "bold" },
       })
 

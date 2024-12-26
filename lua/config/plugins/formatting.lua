@@ -3,6 +3,11 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("conform").setup({
+			formatters = {
+				stylua = {
+					args = { "--indent-width", "2", "--indent-type", "Spaces", "-" },
+				},
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },

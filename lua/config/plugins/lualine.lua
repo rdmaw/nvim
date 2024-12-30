@@ -7,16 +7,16 @@ return {
 
       local colors = {
         bg = "NONE",
-        fg = "#bbc2cf",
-        yellow = "#ECBE7B",
-        cyan = "#008080",
-        darkblue = "#081633",
-        green = "#98be65",
-        orange = "#FF8800",
-        violet = "#a9a1e1",
-        magenta = "#c678dd",
-        blue = "#51afef",
-        red = "#ec5f67",
+        fg = "#ebdbb2",
+        yellow = "#d8a657",
+        cyan = "#7daea3",
+        darkblue = "#292929",
+        green = "#a9b665",
+        orange = "#e78a4e",
+        violet = "#d3869b",
+        magenta = "#d3869b",
+        blue = "#7daea3",
+        red = "#ea6962",
       }
 
       local conditions = {
@@ -115,7 +115,7 @@ return {
         "filename",
         cond = conditions.buffer_not_empty,
         -- , gui = "bold"
-        color = { fg = colors.white },
+        color = { fg = colors.fg },
       })
 
       ins_left({
@@ -136,9 +136,10 @@ return {
         end,
       })
 
-      ins_left({ "location" })
-
-      ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+      -- Position
+      -- ins_left({ "location" })
+      --
+      -- ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
 
       ins_right({
         "diff",
@@ -168,7 +169,7 @@ return {
           "[9]",
           "[10]",
         },
-        color_active = { fg = "white" },
+        color_active = { fg = colors.yellow },
       })
 
       ins_right("filetype")

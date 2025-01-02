@@ -172,7 +172,7 @@ return {
         color_active = { fg = colors.yellow },
       })
 
-      ins_right("filetype")
+      -- ins_right("filetype")
 
       ins_right({
         function()

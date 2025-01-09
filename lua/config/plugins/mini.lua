@@ -24,6 +24,8 @@ return {
           replace = "sr",
           update_n_lines = "sn",
         },
+
+        search_method = "cover_or_next",
       })
     end,
   },

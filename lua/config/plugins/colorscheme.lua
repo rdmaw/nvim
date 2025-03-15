@@ -77,7 +77,19 @@ return {
         },
       })
 
-      vim.api.nvim_command("colorscheme catppuccin")
+      -- vim.api.nvim_command("colorscheme catppuccin")
     end,
+  },
+  {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+      vim.cmd.colorscheme("nord")
+    end,
+  },
+  install = {
+    colorscheme = { "nord" },
   },
 }

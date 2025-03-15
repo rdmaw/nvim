@@ -41,8 +41,6 @@ vim.g.mapleader = " "
 
 map("n", "<A-v>", "<C-v>", { noremap = true, silent = true, desc = "Enter visual block mode" })
 map("i", "jj", "<ESC>", { desc = "ESC with jj" })
--- map("n", "+", "<C-a>", { desc = "Increment number" })
--- map("n", "-", "<C-x>", { desc = "Decrement number" })
 map("n", "<C-e>", "gg<S-v>G", { noremap = true, desc = "Select all" })
 map("n", "<M-\\>", ":vsplit<CR>", { desc = "Split window to the right" })
 map("n", "<M-->", ":split<CR>", { desc = "Split window below" })

@@ -5,18 +5,32 @@ return {
     config = function()
       local lualine = require("lualine")
 
+      -- gruvbox colors = {
+      --   bg = "NONE",
+      --   fg = "#ebdbb2",
+      --   yellow = "#d8a657",
+      --   cyan = "#7daea3",
+      --   darkblue = "#292929",
+      --   green = "#a9b665",
+      --   orange = "#e78a4e",
+      --   violet = "#d3869b",
+      --   magenta = "#d3869b",
+      --   blue = "#7daea3",
+      --   red = "#ea6962",
+      -- }
+
       local colors = {
         bg = "NONE",
-        fg = "#ebdbb2",
-        yellow = "#d8a657",
-        cyan = "#7daea3",
-        darkblue = "#292929",
-        green = "#a9b665",
-        orange = "#e78a4e",
-        violet = "#d3869b",
-        magenta = "#d3869b",
-        blue = "#7daea3",
-        red = "#ea6962",
+        fg = "#eceff4",
+        darkblue = "#5e81ac",
+        blue = "#81a1c1",
+        ice = "#88c0d0",
+        frost = "#8fbcbb",
+        green = "#a3be8c",
+        yellow = "#ebcb8b",
+        orange = "#d08770",
+        red = "#bf616a",
+        purple = "#b48ead",
       }
 
       local conditions = {
@@ -108,7 +122,7 @@ return {
       ins_left({
         "branch",
         icon = "",
-        color = { fg = colors.violet },
+        color = { fg = colors.blue },
       })
 
       ins_left({
@@ -125,7 +139,7 @@ return {
         diagnostics_color = {
           error = { fg = colors.red },
           warn = { fg = colors.yellow },
-          info = { fg = colors.cyan },
+          info = { fg = colors.ice },
         },
       })
 
@@ -155,7 +169,7 @@ return {
       ins_right({
         "harpoon2",
         -- 
-        icon = "",
+        icon = "",
         indicators = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" },
         active_indicators = {
           "[1]",

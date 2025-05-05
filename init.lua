@@ -68,6 +68,26 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Clipboard
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = paste,
+    ["*"] = paste,
+  },
+}
+
 vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0

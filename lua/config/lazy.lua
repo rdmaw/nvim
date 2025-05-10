@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -19,13 +18,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
 require("lazy").setup({
   change_detection = { enabled = false },
   spec = {
-    -- { "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight-storm" end },
+    {
+      "folke/tokyonight.nvim",
+      config = function()
+        vim.cmd.colorscheme("tokyonight")
+      end,
+    },
     { import = "config.plugins" },
   },
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })

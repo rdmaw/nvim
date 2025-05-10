@@ -34,9 +34,6 @@ return {
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
         })
       end)
-
-      -- Require multigrep file to search matching words for multiple languages
-      require("config.telescope.multigrep").setup()
     end,
   },
 

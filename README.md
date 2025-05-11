@@ -1,7 +1,7 @@
 ## Neovim Config
 
-My current setup.
+My current workspace.
 
-It probably won't work on your pc, but you can take inspiration from it :)
+It most likely won't work on your pc, but you can take inspiration from it :)
 
-[Dotfiles](https://github.com/rdmaw/dotfiles).
+[dotfiles](https://github.com/rdmaw/dotfiles)

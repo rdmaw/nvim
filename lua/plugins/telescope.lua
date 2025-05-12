@@ -5,11 +5,6 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
     config = function()
       require('telescope').setup({
-        pickers = {
-          find_files = {
-            theme = 'ivy',
-          },
-        },
         extensions = {
           fzf = {},
         },
@@ -31,17 +26,6 @@ return {
           cwd = vim.fs.joinpath(vim.fn.stdpath('data'), 'lazy'),
         })
       end)
-    end,
-  },
-  {
-    'nvim-telescope/telescope-ui-select.nvim',
-    config = function()
-      require('telescope').setup({
-        extensions = {
-          require('telescope.themes').get_dropdown({}),
-        },
-      })
-      require('telescope').load_extension('ui-select')
     end,
   },
 }

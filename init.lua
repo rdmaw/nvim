@@ -14,7 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('core')
-require('lazy').setup('plugins', {
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+require('config')
+require('lazy').setup({
+  spec = {{ import = 'plugins' }},
   change_detection = { notify = false },
 })

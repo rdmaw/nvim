@@ -8,6 +8,7 @@ return {
 
     vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end, { desc = 'Harpoon file' })
     vim.keymap.set('n', '<leader>h', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = 'Open harpoon window' })
+
     vim.keymap.set('n', '<leader>1', function() harpoon:list():select(1) end, { desc = 'Go to Harpoon 1' })
     vim.keymap.set('n', '<leader>2', function() harpoon:list():select(2) end, { desc = 'Go to Harpoon 2' })
     vim.keymap.set('n', '<leader>3', function() harpoon:list():select(3) end, { desc = 'Go to Harpoon 3' })

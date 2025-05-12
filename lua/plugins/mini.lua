@@ -1,10 +1,25 @@
 return {
+  { 'echasnovski/mini.surround', version = false, opts = {}, },
+  { 'echasnovski/mini.splitjoin', version = false, opts = { mappings = { toggle = 'sv', }, }, },
+  {
+    'echasnovski/mini.trailspace',
+    version = false,
+    opts = {},
+    keys = {
+      {
+        '<leader>cw',
+        function() require('mini.trailspace').trim() end,
+        desc = 'Clear whitespace',
+      },
+    },
+  },
   {
     'echasnovski/mini.files',
     version = false,
     opts = {
       mappings = {
-        synchronize = ':w'
+        synchronize = ':w',
+        reveal_cwd = '<Enter>',
       },
     },
     keys = {
@@ -12,9 +27,9 @@ return {
         '<leader>e',
         function()
           local MiniFiles = require('mini.files')
-            if not MiniFiles.close() then
-              MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
-            end
+          if not MiniFiles.close() then
+            MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
+          end
         end,
         desc = 'Toggle mini.files',
       },
@@ -33,22 +48,6 @@ return {
   --         hex_color = hipatterns.gen_highlighter.hex_color(),
   --       },
   --     })
-  --
-  --     local surround = require('mini.surround')
-  --     surround.setup({
-  --       mappings = {
-  --         add = 'sa',
-  --         delete = 'sd',
-  --         find = 'sf',
-  --         find_left = 'sF',
-  --         highlight = 'sh',
-  --         replace = 'sr',
-  --         update_n_lines = 'sn',
-  --       },
-  --
-  --       search_method = 'cover_or_next',
-  --     })
-  --     require('mini.files').setup()
   --   end,
   -- },
 }

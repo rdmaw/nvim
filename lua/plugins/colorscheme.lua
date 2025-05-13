@@ -6,7 +6,7 @@ return {
       require('colorizer').setup({
         filetypes = {
           '*',
-          html = { names = false },
+          html = {names = false},
         },
         mode = 'background',
       })

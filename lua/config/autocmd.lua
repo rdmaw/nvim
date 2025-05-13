@@ -1,6 +1,6 @@
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking text',
+	desc = 'Highlight on yank',
 	callback = function()
 		vim.hl.on_yank()
 	end,

@@ -34,7 +34,7 @@ opt.sb = true
 opt.ic = true
 opt.scs = true
 opt.hls = false
-opt.wig:append({ '*/node_modules/*' })
+opt.wig:append({'*/node_modules/*'})
 
 -- File
 opt.swf = false

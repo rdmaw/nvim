@@ -1,21 +1,21 @@
 return {
-  { 'echasnovski/mini.icons', version = false, opts = {} },
-  { 'echasnovski/mini.surround', version = false, opts = {} },
+  {'echasnovski/mini.surround', version = false, opts = {}},
   {
     'echasnovski/mini.trailspace',
     version = false,
     opts = {},
     keys = {
-      { '<leader>cw', function() require('mini.trailspace').trim() end, desc = 'Clear whitespace' }
+      {'<leader>cw', function() require('mini.trailspace').trim() end, desc = 'Clear whitespace'}
     }
   },
   {
     'echasnovski/mini.files',
+    dependencies = {'echasnovski/mini.icons', opts = {}},
     version = false,
     opts = {
       mappings = {
         synchronize = ':w',
-        reveal_cwd = '<Enter>',
+        reveal_cwd = '<CR>',
       }
     },
     keys = {

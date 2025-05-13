@@ -1,7 +1,7 @@
 -- Add lsp to statusline
 ---@return string
 local function lsp_status()
-    local attached_clients = vim.lsp.get_clients({ bufnr = 0 })
+    local attached_clients = vim.lsp.get_clients({bufnr = 0})
     if #attached_clients == 0 then
         return ""
     end

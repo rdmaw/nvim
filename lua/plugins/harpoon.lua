@@ -6,7 +6,7 @@ return {
   keys = function()
     local keys = {
       {'<leader>a', function() require('harpoon'):list():add() end, desc = 'Harpoon current file'},
-      {'<leader>h', function() local harpoon = require('harpoon') harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = 'Toggle Harpoon menu'},
+      {'<leader>h', function() local harpoon = require('harpoon') harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = 'Toggle Harpoon menu'}
     }
 
     for i = 1, 4 do
@@ -19,5 +19,5 @@ return {
       })
     end
     return keys
-  end,
+  end
 }

@@ -4,6 +4,9 @@ local opt = vim.opt
 vim.scripte = 'utf-8'
 opt.tgc = true
 opt.title = true
+opt.ut = 250
+opt.tm = 500
+opt.cf = true
 opt.clipboard = 'unnamedplus'
 
 -- Mouse and cursor
@@ -24,6 +27,7 @@ opt.ts = 2
 opt.sts = 2
 opt.sw = 2
 opt.et = true
+opt.bri = true
 
 -- Windows
 opt.icm = 'split'
@@ -38,6 +42,7 @@ opt.wig:append({'*/node_modules/*'})
 
 -- File
 opt.swf = false
+opt.udf = true
 
 -- Disable provider checks
 vim.g.loaded_node_provider = 0

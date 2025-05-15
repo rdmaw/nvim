@@ -1,5 +1,5 @@
 return {
-  {'echasnovski/mini.surround', version = false, opts = {}},
+  {'echasnovski/mini.surround', version = false, event = {'BufReadPre', 'BufNewFile'}, opts = {}},
   {
     'echasnovski/mini.trailspace',
     version = false,
@@ -27,7 +27,7 @@ return {
             MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
           end
         end,
-        desc = 'Toggle mini.files',
+        desc = 'Toggle mini.files'
       }
     }
   }

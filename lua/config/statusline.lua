@@ -1,28 +1,28 @@
--- Add lsp to statusline
+-- Show active client
 ---@return string
 local function lsp_status()
     local attached_clients = vim.lsp.get_clients({bufnr = 0})
     if #attached_clients == 0 then
-        return ""
+        return ''
     end
     local names = vim.iter(attached_clients)
         :map(function(client)
-            local name = client.name:gsub("language.server", "ls")
+            local name = client.name:gsub('language.server', 'ls')
             return name
         end)
         :totable()
-    return "[" .. table.concat(names, ", ") .. "]"
+    return '[' .. table.concat(names, ', ') .. ']'
 end
 
 function _G.statusline()
     return table.concat({
-        "%f",
-        "%h%w%m%r",
-        "%=",
+        '%f',
+        '%h%w%m%r',
+        '%=',
         lsp_status(),
-        " %-14(%l,%c%V%)",
-        "%P",
-    }, " ")
+        ' %-14(%l,%c%V%)',
+        '%P',
+    }, ' ')
 end
 
-vim.o.statusline = "%{%v:lua._G.statusline()%}"
+vim.o.statusline = '%{%v:lua._G.statusline()%}'

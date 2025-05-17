@@ -44,6 +44,9 @@ opt.wig:append({'*/node_modules/*'})
 opt.swf = false
 opt.udf = true
 
+-- Snacks
+vim.g.snacks_animate = false
+
 -- Disable provider checks
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0

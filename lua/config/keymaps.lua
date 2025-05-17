@@ -20,7 +20,7 @@ map('n', '<leader>L', ':Lazy<CR>', {desc = 'Open Lazy'})
 map('n', '<C-c>', 'ciw', {desc = 'Change word'})
 map('i', 'jj', '<ESC>', {desc= 'Escape insert mode with jj'})
 map('n', '<C-e>', 'gg<S-v>G', {desc = 'Visually select all'})
--- map('t', '<Esc><Esc>', '<C-\\><C-n>', {desc = 'Exit :term'})
+map('t', '<C-\\>', '<C-\\><C-n>', {desc = 'Exit :term'})
 
 -- Center cursor
 map('n', '<C-d>', '<C-d>zz')
@@ -32,6 +32,10 @@ map('n', 'N', 'nzzzv')
 map('v', 'J', ":m '>+1<CR>gv=gv", {desc = 'Move selected lines downward'})
 map('v', 'K', ":m '<-2<CR>gv=gv", {desc = 'Move selected lines upward'})
 
+-- Repeat indents
+map('v', '<', '<gv')
+map('v', '>', '>gv')
+
 -- Split windows
 map('n', '<leader>|', ':vsplit<CR>', {desc = 'Split window to the right'})
 map('n', '<leader>-', ':split<CR>', {desc = 'Split window below'})
@@ -41,6 +45,12 @@ map('n', '<M-h>', '<C-W>4>', {desc = 'Resize to left'})
 map('n', '<M-j>', '<C-W>-', {desc = 'Resize downward'})
 map('n', "<M-k>", '<C-W>+', {desc = "Resize upward"})
 map('n', '<M-l>', '<C-W>4<', {desc = 'Resize to right'})
+
+-- Tabs
+map('n', '<Tab>', '<Cmd>tabnext<CR>', {desc = 'Next tab'})
+map('n', '<S-Tab>', '<Cmd>tabprevious<CR>', {desc = 'Previous tab'})
+map('n', '<leader>n', '<Cmd>tabnew<CR>', {desc = 'New tab'})
+map('n', '<leader>x', '<Cmd>tabclose<CR>', {desc = 'Close tab'})
 
 -- Buffers
 map('n', 'L', vim.cmd.bnext, {desc='Goto next buffer'})

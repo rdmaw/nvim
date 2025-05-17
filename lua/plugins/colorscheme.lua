@@ -8,6 +8,26 @@ return {
     }
   },
   {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('nordic').setup({
+        bright_border = true
+      })
+      -- require('nordic').load()
+      -- vim.o.background = 'light'
+    end
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    config = function()
+      require('gruvbox').setup()
+      vim.cmd('colo gruvbox')
+      vim.o.background = 'dark'
+    end
+  },
+  {
     'rose-pine/neovim',
     lazy = false,
     priority = 1000,
@@ -19,7 +39,8 @@ return {
           italic = false,
         }
       })
-      vim.cmd('colo rose-pine')
+      vim.o.background = 'light'
+      -- vim.cmd('colo rose-pine')
     end
   }
 }

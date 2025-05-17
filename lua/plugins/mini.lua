@@ -10,6 +10,7 @@ return {
   },
   {
     'echasnovski/mini.files',
+    cond = not vim.g.vscode,
     dependencies = {'echasnovski/mini.icons', opts = {}},
     version = false,
     opts = {

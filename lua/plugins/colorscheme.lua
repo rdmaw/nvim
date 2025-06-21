@@ -3,8 +3,7 @@ return {
     'catgoose/nvim-colorizer.lua',
     event = 'BufReadPre',
     opts = {
-      filetypes = {'css'},
-      mode = 'background'
+      filetypes = {css = {names = false}},
     }
   },
   {
@@ -20,14 +19,6 @@ return {
     end
   },
   {
-    'ellisonleao/gruvbox.nvim',
-    config = function()
-      require('gruvbox').setup()
-      vim.cmd('colo gruvbox')
-      vim.o.background = 'dark'
-    end
-  },
-  {
     'rose-pine/neovim',
     lazy = false,
     priority = 1000,
@@ -39,8 +30,8 @@ return {
           italic = false,
         }
       })
-      vim.o.background = 'light'
-      -- vim.cmd('colo rose-pine')
+      -- vim.o.background = 'light'
+      vim.cmd('colo rose-pine')
     end
   }
 }

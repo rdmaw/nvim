@@ -1,11 +1,13 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  branch = 'master',
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs',
   opts = {
-    ensure_installed = {'bash', 'css', 'diff', 'gitignore', 'html', 'javascript', 'json', 'lua', 'markdown', 'markdown_inline', 'regex', 'toml', 'vim', 'xml'},
-    highlight = {enable = true},
-    indent = {enabled = true},
+    ensure_installed = { 'bash', 'css', 'diff', 'gitignore', 'html', 'javascript', 'json', 'lua', 'markdown', 'markdown_inline', 'regex', 'toml', 'vim', 'xml' },
+    highlight = { enable = true },
+    indent = { enable = true },
     incremental_selection = {
       enable = true,
       keymaps = {
